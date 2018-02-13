@@ -5,13 +5,15 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   
   def index
-    @users = User.paginate(page: params[:page])
+    #@users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page]).search(params[:search])
+
   end
   
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page]).search(params[:search])
   end
   
   def new
@@ -61,7 +63,7 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
-  end
+   end
 
   def followers
     @title = "Followers"
@@ -84,6 +86,6 @@ class UsersController < ApplicationController
     
      def admin_user
       redirect_to(root_url) unless current_user.admin?
-    end
+     end
   
 end

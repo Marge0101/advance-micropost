@@ -16,6 +16,7 @@ gem 'bootstrap'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
 gem 'carrierwave',             '1.2.2'
+gem 'ransack'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
