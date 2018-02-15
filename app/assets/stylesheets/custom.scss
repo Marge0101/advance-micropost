@@ -75,6 +75,16 @@ p {
   line-height: 1.7em;
 }
 
+.jumbotron{
+background-color:white;
+}
+
+.d-block{
+  width: 100%;
+  height: 360px;
+  background-size:cover;
+}
+
 /* sidebar */
 
 aside {
@@ -242,4 +252,8 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.search{
+  margin-bottom: 10px;
 }

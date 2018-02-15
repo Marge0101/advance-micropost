@@ -8,6 +8,9 @@ class User < ApplicationRecord
                                    dependent:   :destroy
      has_many :following, through: :active_relationships, source: :followed
      has_many :followers, through: :passive_relationships, source: :follower
+     has_many :favorites
+     has_many :favorites_microposts, through: :favorites, source: :micropost
+     
      attr_accessor :remember_token, :activation_token, :reset_token
      before_save   :downcase_email
      before_create :create_activation_digest
@@ -78,8 +81,20 @@ class User < ApplicationRecord
      Micropost.where("user_id = ?", id)
     end
     
-    
+    def favorite?(micropost)
+    favorites.include?(micropost_id: micropost.id)
+    end
+
+    def favorite(micropost)
+      favorites.create(micropost_id: micropost.id)
+    end
   
+    def unfavorite(micropost)
+      favorites.find_by(micropost_id: micropost.id).destroy
+    end
+    
+    
+    
     def follow(other_user)
       active_relationships.create(followed_id: other_user.id)
     end

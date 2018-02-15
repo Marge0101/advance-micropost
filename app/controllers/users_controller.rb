@@ -72,6 +72,12 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
+  def favorites
+    @user =User.find(params[:id])
+    @favorites = @user.favorites_microposts.page(params[:page])
+    render 'favorites_microposts'
+  end
+  
    private
 
     def user_params

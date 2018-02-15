@@ -1,5 +1,5 @@
 <% provide(:title, @user.name) %>
-<% provide(:search_name, 'content search') %>
+<% provide(:search_name) %>
 <% provide(:path, user_path) %>
 <div class="row">
   <aside class="col-md-4">
@@ -17,7 +17,9 @@
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <div class='search'>
      <%= render 'users/search' %>
+     </div>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>

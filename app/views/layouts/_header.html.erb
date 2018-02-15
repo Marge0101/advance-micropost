@@ -2,11 +2,12 @@
 <!--header class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"-->
   <header class="navbar fixed-top navbar-expand-lg">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
+    <%= link_to "Scuba talk", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right nav-item active">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", static_pages_help_path %></li>
+        <li><%= link_to "About", static_pages_about_path %></li>
+        <li><a href="https://ms-portfolio.herokuapp.com/#contact" target="_blank">Contact</a></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
