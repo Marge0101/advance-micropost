@@ -53,7 +53,7 @@ class PasswordResetsController < ApplicationController
             @user.authenticated?(:reset, params[:id]))
       redirect_to root_url
     end
-  end
+   end
   
    def check_expiration
     if @user.password_reset_expired?

@@ -23,40 +23,41 @@
     <a href="https://ms-portfolio.herokuapp.com" target="_blank"> Mari Sato's </a>
     Ruby on rails sample application.
   </h2>
-
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
 </div>
 
+
 <div class="row">
-   
   <div class="col-sm-4">
-      <div class="card">
-         <img class="card-img-top" src="/images/thumb-image1.jpg" alt="Card image cap">
-         <div class="card-body">
-        <% @micropost.shuffle.first(1).each do |micropost| %>
-          <p><%=micropost.content%></p>
-        <% end %>
-      </div>
+    <figure class="container-home">
+      <img id="img-home" src="/images/thumb-image1.jpg" alt="Card image cap">
+    </figure>
+    <div class ="content-home">
+      <% @micropost.shuffle.first(1).each do |micropost| %>
+      <p><%=micropost.content%></p>
+      <% end %>
     </div>
   </div>
   <div class="col-sm-4">
-      <div class="card">
-         <img class="card-img-top" src="/images/thumb-image2.jpg" alt="Card image cap">
-         <div class="card-body">
-        <% @micropost.shuffle.first(1).each do |micropost| %>
-          <p><%=micropost.content%></p>
-        <% end %>
-      </div>
+    <figure class="container-home">
+      <img id="img-home" src="/images/thumb-image2.jpg" alt="Card image cap">
+    </figure>
+    <div class ="content-home">
+      <% @micropost.shuffle.first(1).each do |micropost| %>
+      <p><%=micropost.content%></p>
+      <% end %>
     </div>
   </div>
+  
   <div class="col-sm-4">
-      <div class="card">
-         <img class="card-img-top" src="/images/thumb-image3.jpg" alt="Card image cap">
-         <div class="card-body">
-        <% @micropost.shuffle.first(1).each do |micropost| %>
-          <p><%=micropost.content%></p>
-        <% end %>
-      </div>
+    <figure class="container-home">
+      <img id="img-home" src="/images/thumb-image3.jpg" alt="Card image cap">
+    </figure>
+    <div class ="content-home">
+      <% @micropost.shuffle.first(1).each do |micropost| %>
+      <p><%=micropost.content%></p>
+      <% end %>
     </div>
   </div>
 </div>
